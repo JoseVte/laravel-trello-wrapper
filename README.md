@@ -62,10 +62,10 @@ $checklist
     ->setCard($card)
     ->setName('Example list')
     ->save();
-Trello::checklist()->items()->create($checklist->getId(), 'Example checklist item');
+Trello::getChecklistApi()->items()->create($checklist->getId(), 'Example checklist item');
 
 // Attach an image using a url
-Trello::card()->attachments()->create($card->getId(), ['url' => 'http://lorempixel.com/400/200/']);
+Trello::getCardApi()->attachments()->create($card->getId(), ['url' => 'http://lorempixel.com/400/200/']);
 ```
 
 #### More examples
