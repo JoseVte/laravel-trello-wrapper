@@ -1,0 +1,45 @@
+{
+    "name": "josrom/laravel-trello-wrapper",
+    "description": "Trello API wrapper for Laravel 8",
+    "type": "library",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/JoseVte/php-trello-api"
+        }
+    ],
+    "require": {
+        "php": "^7.3 | ^8.0",
+        "guzzlehttp/psr7": "^2.1.0",
+        "illuminate/contracts": "^8.0 | ^9.0",
+        "illuminate/support": "^8.0 | ^9.0",
+        "semaio/php-trello-api": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "josrom/phpunit-unicode-printer": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelTrello\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelTrello\\TrelloServiceProvider"
+            ],
+            "aliases": {
+                "LaravelTrello": "LaravelTrello\\Facade"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Jose Vicente Orts Romero",
+            "email": "jvortsromero@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
