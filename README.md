@@ -1,6 +1,9 @@
 # Laravel 8 Trello API wrapper
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gregoriohc/laravel-trello/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gregoriohc/laravel-trello/?branch=master)
+![Build](https://github.com/JoseVte/laravel-trello-wrapper/actions/workflows/ci.yml/badge.svg)
+[![Latest Stable Version](http://poser.pugx.org/josrom/laravel-trello-wrapper/v)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
+[![Total Downloads](http://poser.pugx.org/josrom/laravel-trello-wrapper/downloads)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
+[![License](http://poser.pugx.org/josrom/laravel-trello-wrapper/license)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 
 A simple Laravel 8 package that wraps [Trello](https://trello.com) API.
 
