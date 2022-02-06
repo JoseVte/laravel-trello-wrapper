@@ -2,21 +2,22 @@
 
 namespace LaravelTrello;
 
+use Semaio\TrelloApi\Client;
 use Semaio\TrelloApi\Manager;
 use Semaio\TrelloApi\ClientBuilder;
 use Illuminate\Contracts\Config\Repository;
 
 /**
- * @method \Semaio\TrelloApi\Api\ActionApi getActionApi()
- * @method \Semaio\TrelloApi\Api\BoardApi getBoardApi()
- * @method \Semaio\TrelloApi\Api\CardApi getCardApi()
- * @method \Semaio\TrelloApi\Api\CardListApi getCardListApi()
- * @method \Semaio\TrelloApi\Api\ChecklistApi getChecklistApi()
- * @method \Semaio\TrelloApi\Api\MemberApi getMemberApi()
+ * @method \Semaio\TrelloApi\Api\ActionApi       getActionApi()
+ * @method \Semaio\TrelloApi\Api\BoardApi        getBoardApi()
+ * @method \Semaio\TrelloApi\Api\CardApi         getCardApi()
+ * @method \Semaio\TrelloApi\Api\CardListApi     getCardListApi()
+ * @method \Semaio\TrelloApi\Api\ChecklistApi    getChecklistApi()
+ * @method \Semaio\TrelloApi\Api\MemberApi       getMemberApi()
  * @method \Semaio\TrelloApi\Api\NotificationApi getNotificationApi()
  * @method \Semaio\TrelloApi\Api\OrganizationApi getOrganizationApi()
- * @method \Semaio\TrelloApi\Api\TokenApi getTokenApi()
- * @method \Semaio\TrelloApi\Api\WebhookApi getWebhookApi()
+ * @method \Semaio\TrelloApi\Api\TokenApi        getTokenApi()
+ * @method \Semaio\TrelloApi\Api\WebhookApi      getWebhookApi()
  */
 class Wrapper
 {
@@ -77,6 +78,11 @@ class Wrapper
         }
 
         return $this->manager;
+    }
+
+    public function getClient(): Client
+    {
+        return $this->client;
     }
 
     public function getObjectId(string $type, string $name, array $options = [])
