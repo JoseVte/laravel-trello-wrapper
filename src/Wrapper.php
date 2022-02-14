@@ -6,6 +6,7 @@ use Semaio\TrelloApi\Client;
 use Semaio\TrelloApi\Manager;
 use Semaio\TrelloApi\ClientBuilder;
 use Illuminate\Contracts\Config\Repository;
+use Psr\Http\Client\ClientInterface as HttpClientInterface;
 
 /**
  * @method \Semaio\TrelloApi\Api\ActionApi       getActionApi()
@@ -56,13 +57,16 @@ class Wrapper
      */
     private $cache;
 
-    public function __construct(Repository $config)
+    public function __construct(Repository $config, HttpClientInterface $httpClient = null)
     {
         // Set the config
         $this->config = $config;
 
         // Make the client instance
         $this->clientBuilder = new ClientBuilder();
+        if ($httpClient !== null) {
+            $this->clientBuilder->setHttpClient($httpClient);
+        }
         $this->client = $this->clientBuilder->build($this->config->get('trello.api_key'), $this->config->get('trello.api_token'));
     }
 
@@ -83,6 +87,11 @@ class Wrapper
     public function getClient(): Client
     {
         return $this->client;
+    }
+
+    public function setClient(Client $client): Client
+    {
+        return $this->client = $client;
     }
 
     public function getObjectId(string $type, string $name, array $options = [])
