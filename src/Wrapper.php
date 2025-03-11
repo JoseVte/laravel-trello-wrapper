@@ -57,7 +57,7 @@ class Wrapper
      */
     private $cache;
 
-    public function __construct(Repository $config, HttpClientInterface $httpClient = null)
+    public function __construct(Repository $config, ?HttpClientInterface $httpClient = null)
     {
         // Set the config
         $this->config = $config;
