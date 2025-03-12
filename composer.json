@@ -1,6 +1,6 @@
 {
     "name": "josrom/laravel-trello-wrapper",
-    "description": "Trello API wrapper for Laravel 8",
+    "description": "Trello API wrapper for Laravel 11",
     "type": "library",
     "license": "MIT",
     "require": {
@@ -9,7 +9,13 @@
         "guzzlehttp/psr7": "^2.1.0",
         "illuminate/contracts": "^11.0",
         "illuminate/support": "^11.0",
-        "semaio/php-trello-api": "dev-master"
+        "josrom/php-trello-api": "3.0.0"
+    },
+    "repositories": {
+        "josrom/php-trello-api": {
+            "type": "vcs",
+            "url": "https://github.com/JoseVte/php-trello-api"
+        }
     },
     "require-dev": {
         "phpunit/phpunit": "^9.3",
