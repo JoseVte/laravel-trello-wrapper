@@ -5,7 +5,7 @@
 [![Total Downloads](http://poser.pugx.org/josrom/laravel-trello-wrapper/downloads)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 [![License](http://poser.pugx.org/josrom/laravel-trello-wrapper/license)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 
-A simple Laravel 11 package that wraps [Trello](https://trello.com) API.
+A simple Laravel 11 & 12 package that wraps [Trello](https://trello.com) API.
 
 ## Requirements
 
