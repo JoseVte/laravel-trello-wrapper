@@ -1,15 +1,21 @@
-# Laravel 11 Trello API wrapper
+# Laravel 12 (11, 10, 9, 8) Trello API wrapper
 
 ![Build](https://github.com/JoseVte/laravel-trello-wrapper/actions/workflows/ci.yml/badge.svg)
 [![Latest Stable Version](http://poser.pugx.org/josrom/laravel-trello-wrapper/v)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 [![Total Downloads](http://poser.pugx.org/josrom/laravel-trello-wrapper/downloads)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 [![License](http://poser.pugx.org/josrom/laravel-trello-wrapper/license)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 
-A simple Laravel 11 & 12 package that wraps [Trello](https://trello.com) API.
+A simple Laravel 12 package that wraps [Trello](https://trello.com) API.
 
 ## Requirements
 
 * PHP 8.2 or higher
+
+#### Previous versions
+
+* Laravel [11](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/11.0.1): PHP 8.2 or higher
+* Laravel [10](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/10.0.0): PHP 8.1 or higher
+* Laravel [9](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/9.0.0) & [8](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/8.0.0): PHP 7.3 or higher
 
 ## Installation
 
