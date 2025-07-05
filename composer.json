@@ -9,7 +9,7 @@
         "guzzlehttp/psr7": "^2.1.0",
         "illuminate/contracts": "^11.0 || ^12.0",
         "illuminate/support": "^11.0 || ^12.0",
-        "josrom/php-trello-api": "3.0.0"
+        "semaio/php-trello-api": "dev-master"
     },
     "repositories": {
         "josrom/php-trello-api": {
