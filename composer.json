@@ -9,13 +9,7 @@
         "guzzlehttp/psr7": "^2.1.0",
         "illuminate/contracts": "^11.0 || ^12.0",
         "illuminate/support": "^11.0 || ^12.0",
-        "josrom/php-trello-api": "3.0.0"
-    },
-    "repositories": {
-        "josrom/php-trello-api": {
-            "type": "vcs",
-            "url": "https://github.com/JoseVte/php-trello-api"
-        }
+        "josrom/php-trello-api": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.3",
@@ -42,5 +36,10 @@
             "email": "jvortsromero@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
 }
