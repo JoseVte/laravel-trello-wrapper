@@ -1,18 +1,20 @@
-# Laravel 12 (11, 10, 9, 8) Trello API wrapper
+# Laravel 13 (12, 11, 10, 9, 8) Trello API wrapper
 
 ![Build](https://github.com/JoseVte/laravel-trello-wrapper/actions/workflows/ci.yml/badge.svg)
 [![Latest Stable Version](http://poser.pugx.org/josrom/laravel-trello-wrapper/v)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 [![Total Downloads](http://poser.pugx.org/josrom/laravel-trello-wrapper/downloads)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 [![License](http://poser.pugx.org/josrom/laravel-trello-wrapper/license)](https://packagist.org/packages/josrom/laravel-trello-wrapper)
 
-A simple Laravel 12 package that wraps [Trello](https://trello.com) API.
+A simple Laravel 13 package that wraps [Trello](https://trello.com) API.
 
 ## Requirements
 
-* PHP 8.2 or higher
+* PHP 8.3 or higher
+* Laravel 11, 12 or 13
 
 #### Previous versions
 
+* Laravel [12](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/12.0.1): PHP 8.2 or higher
 * Laravel [11](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/11.0.1): PHP 8.2 or higher
 * Laravel [10](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/10.0.0): PHP 8.1 or higher
 * Laravel [9](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/9.0.0) & [8](https://github.com/JoseVte/laravel-trello-wrapper/releases/tag/8.0.0): PHP 7.3 or higher
@@ -81,6 +83,34 @@ Trello::getCardApi()->attachments()->create($card->getId(), ['url' => 'http://lo
 
 For more examples of usage, please see the original PHP Trello API package documentation: https://github.com/cdaguerre/php-trello-api
 
+## Development
+
+### Running tests
+
+```sh
+composer test
+```
+
+### Code style
+
+This package uses [PHP-CS-Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) to keep a consistent code style.
+
+Check for style issues without modifying files:
+
+```sh
+composer cs-check
+```
+
+Automatically fix style issues:
+
+```sh
+composer cs-fix
+```
+
 ## Contributing
 
 If you're having problems, spot a bug, or have a feature suggestion, please log and issue on Github. If you'd like to have a crack yourself, fork the package and make a pull request.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed list of changes.

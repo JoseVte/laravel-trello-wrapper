@@ -1,25 +1,31 @@
 name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build-test:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.3', '8.4', '8.5']
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: xdebug
+          tools: composer:v2
 
       - name: Install dependencies
-        uses: php-actions/composer@v6
-        with:
-          version: 2
-          php_version: 8.0
+        run: composer install --prefer-dist --no-interaction --no-progress
 
-      - name: PHPUnit (php-actions)
-        uses: php-actions/phpunit@v3
-        with:
-          version: 9
-          php_version: 8.0
-          bootstrap: vendor/autoload.php
-          configuration: phpunit.xml
-          args: --coverage-text
+      - name: Run PHP CS Fixer (dry-run)
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit --coverage-text

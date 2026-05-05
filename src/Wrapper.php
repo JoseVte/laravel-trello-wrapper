@@ -4,63 +4,65 @@ namespace LaravelTrello;
 
 use Semaio\TrelloApi\Client;
 use Semaio\TrelloApi\Manager;
+use Semaio\TrelloApi\Api\CardApi;
+use Semaio\TrelloApi\Api\BoardApi;
+use Semaio\TrelloApi\Api\TokenApi;
+use Semaio\TrelloApi\Api\ActionApi;
+use Semaio\TrelloApi\Api\MemberApi;
 use Semaio\TrelloApi\ClientBuilder;
+use Semaio\TrelloApi\Api\WebhookApi;
+use Semaio\TrelloApi\Api\CardListApi;
+use Semaio\TrelloApi\Api\ChecklistApi;
+use Semaio\TrelloApi\Api\NotificationApi;
+use Semaio\TrelloApi\Api\OrganizationApi;
 use Illuminate\Contracts\Config\Repository;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 
 /**
- * @method \Semaio\TrelloApi\Api\ActionApi       getActionApi()
- * @method \Semaio\TrelloApi\Api\BoardApi        getBoardApi()
- * @method \Semaio\TrelloApi\Api\CardApi         getCardApi()
- * @method \Semaio\TrelloApi\Api\CardListApi     getCardListApi()
- * @method \Semaio\TrelloApi\Api\ChecklistApi    getChecklistApi()
- * @method \Semaio\TrelloApi\Api\MemberApi       getMemberApi()
- * @method \Semaio\TrelloApi\Api\NotificationApi getNotificationApi()
- * @method \Semaio\TrelloApi\Api\OrganizationApi getOrganizationApi()
- * @method \Semaio\TrelloApi\Api\TokenApi        getTokenApi()
- * @method \Semaio\TrelloApi\Api\WebhookApi      getWebhookApi()
+ * @method ActionApi       getActionApi()
+ * @method BoardApi        getBoardApi()
+ * @method CardApi         getCardApi()
+ * @method CardListApi     getCardListApi()
+ * @method ChecklistApi    getChecklistApi()
+ * @method MemberApi       getMemberApi()
+ * @method NotificationApi getNotificationApi()
+ * @method OrganizationApi getOrganizationApi()
+ * @method TokenApi        getTokenApi()
+ * @method WebhookApi      getWebhookApi()
  */
 class Wrapper
 {
     /**
-     * Config instance.
-     *
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    public $config;
-
-    /**
      * Trello client instance.
      *
-     * @var \Semaio\TrelloApi\Client
+     * @var Client
      */
-    private $client;
+    private Client $client;
 
     /**
      * Trello client builder.
      *
-     * @var \Semaio\TrelloApi\ClientBuilder
+     * @var ClientBuilder
      */
-    private $clientBuilder;
+    private ClientBuilder $clientBuilder;
 
     /**
      * Trello manager instance.
      *
-     * @var \Semaio\TrelloApi\Manager
+     * @var Manager
      */
-    private $manager;
+    private Manager $manager;
 
     /**
      * Client cache.
      *
      * @var array
      */
-    private $cache;
+    private array $cache;
 
-    public function __construct(Repository $config, ?HttpClientInterface $httpClient = null)
+    public function __construct(public Repository $config, ?HttpClientInterface $httpClient = null)
     {
         // Set the config
-        $this->config = $config;
 
         // Make the client instance
         $this->clientBuilder = new ClientBuilder();
