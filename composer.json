@@ -5,8 +5,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "guzzlehttp/psr7": "^2.1.0",
+        "guzzlehttp/guzzle": "^7.0.1 || ^8.0",
+        "guzzlehttp/psr7": "^2.1.0 || ^3.0",
         "illuminate/contracts": "^13.0",
         "illuminate/support": "^13.0",
         "josrom/php-trello-api": "^3.0"

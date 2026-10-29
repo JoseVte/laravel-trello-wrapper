@@ -5,6 +5,11 @@ All notable changes to `josrom/laravel-trello-wrapper` will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [13.1.0] - 2026-10-29
+
+### 🔧 Changed
+- 📦 Allow `guzzlehttp/guzzle` `^8.0` and `guzzlehttp/psr7` `^3.0` alongside the existing Guzzle 7 and PSR-7 2 releases.
+
 ## [13.0.0] - 2026-05-05
 
 ### 🚀 Added
